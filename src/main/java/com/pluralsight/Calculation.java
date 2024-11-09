@@ -1,19 +1,7 @@
 package com.pluralsight;
 
-import java.util.ArrayList;
-
 public class Calculation {
     Pricing pricing;
-
-
-    // Sandwich
-    String size;
-    String breadType;
-    boolean isToasted;
-    ArrayList<String> meat;
-    ArrayList<String> cheese;
-    ArrayList<String> otherTopping;
-    ArrayList<String> sauce;
 
     public double sandwichCalculation(String size,boolean toppingPremium, boolean toppingExtraPremium, boolean toppingChess, boolean toppingExtraChess ){
 
@@ -30,7 +18,6 @@ public class Calculation {
             if (toppingExtraChess){
                 total += pricing.getExtraCheesePrice4Inch();}
 
-            System.out.println("small");
         } else if (size.equalsIgnoreCase("medium")) {
             total += pricing.getSandwichPrice8Inch();
             if (toppingPremium){
@@ -42,9 +29,16 @@ public class Calculation {
             if (toppingExtraChess){
                 total += pricing.getExtraCheesePrice8Inch();}
 
-            System.out.println("medium");
         } else if (size.equalsIgnoreCase("large")) {
-            System.out.println("large");
+            total += pricing.getSandwichPrice12Inch();
+            if (toppingPremium){
+                total += pricing.getSandwichToppingsPrice12Inch();}
+            if(toppingExtraPremium){
+                total+=pricing.getExtraMeatPrice12Inch();}
+            if (toppingChess){
+                total += pricing.getCheesePrice12Inch();}
+            if (toppingExtraChess){
+                total += pricing.getExtraCheesePrice12Inch();}
         }
         return total;
     }
@@ -62,6 +56,4 @@ public class Calculation {
     public double chipCalculation(String size){
         return pricing.getChipsPrice();
     }
-
-
 }

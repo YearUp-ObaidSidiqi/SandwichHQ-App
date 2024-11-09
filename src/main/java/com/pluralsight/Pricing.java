@@ -3,41 +3,44 @@ package com.pluralsight;
 
 public class Pricing {
 
-    /// private static final vs private  final and gave getters and setter.
+    /// private final vs private final and gave getters and setter.
 
     // Sandwich Prices (per size)
-    private static final double sandwichPrice4Inch = 5.50;
-    private static final double sandwichPrice8Inch = 7.00;
-    private static final double sandwichPrice12Inch = 8.50;
+    private final double sandwichPrice4Inch = 5.50;
+    private final double sandwichPrice8Inch = 7.00;
+    private final double sandwichPrice12Inch = 8.50;
 
     // Topping Prices for Meats (per size)
-    private static final double sandwichToppingsPrice4Inch = 1.00;
-    private static final double sandwichToppingsPrice8Inch = 2.00;
-    private static final double sandwichToppingsPrice12Inch = 3.00;
+    private final double sandwichToppingsPrice4Inch = 1.00;
+    private final double sandwichToppingsPrice8Inch = 2.00;
+    private final double sandwichToppingsPrice12Inch = 3.00;
 
     // Extra Meat Prices (per size)
-    private static final double extraMeatPrice4Inch = 0.50;
-    private static final double extraMeatPrice8Inch = 1.00;
-    private static final double extraMeatPrice12Inch = 1.50;
+    private final double extraMeatPrice4Inch = 0.50;
+    private final double extraMeatPrice8Inch = 1.00;
+    private final double extraMeatPrice12Inch = 1.50;
 
     // Cheese Prices (per size)
-    private static final double CheesePrice4Inch = 0.75;
-    private static final double CheesePrice8Inch = 1.50;
-    private static final double CheesePrice12Inch = 2.25;
+    private final double CheesePrice4Inch = 0.75;
+    private final double CheesePrice8Inch = 1.50;
+    private final double CheesePrice12Inch = 2.25;
 
     // Extra Cheese Prices (per size)
-    private static final double extraCheesePrice4Inch = 0.30;
-    private static final double extraCheesePrice8Inch = 0.60;
-    private static final double extraCheesePrice12Inch = 0.90;
+    private final double extraCheesePrice4Inch = 0.30;
+    private final double extraCheesePrice8Inch = 0.60;
+    private final double extraCheesePrice12Inch = 0.90;
 
     // Drink Prices (by size)
-    private static final double smallDrinkPrice = 2.00;
-    private static final double mediumDrinkPrice = 2.50;
-    private static final double largeDrinkPrice = 3.00;
+    private final double smallDrinkPrice = 2.00;
+    private final double mediumDrinkPrice = 2.50;
+    private final double largeDrinkPrice = 3.00;
 
     // Chips Price
-    private static final double chipsPrice = 1.50;
+    private final double chipsPrice = 1.50;
 
+    public double getChipsPrice() {
+        return chipsPrice;
+    }
 
     // Regular Topping Prices (all sizes) are free of cost
 
@@ -118,9 +121,7 @@ public class Pricing {
         return largeDrinkPrice;
     }
 
-    public double getChipsPrice() {
-        return chipsPrice;
-    }
+
 }
 
 

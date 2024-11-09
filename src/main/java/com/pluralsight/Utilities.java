@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Utilities {
 
+
+
     static Scanner scanner = new Scanner(System.in);
 
     public static double PromptForDouble(String prompt){
@@ -146,4 +148,5 @@ public class Utilities {
 
         System.out.println("\n");
     }
+
 }

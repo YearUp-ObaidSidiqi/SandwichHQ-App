@@ -113,7 +113,8 @@ public class Utilities {
                 (
                         userinput.equalsIgnoreCase("Y")
                                 ||
-                                userinput.equalsIgnoreCase("YES")
+                                userinput.equalsIgnoreCase("YES".
+                                )
                 );
 
     }

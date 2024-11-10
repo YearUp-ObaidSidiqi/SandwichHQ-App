@@ -3,15 +3,16 @@ package com.pluralsight;
 public class Calculation {
     Pricing pricing;
 
-    public double sandwichCalculation(String size,boolean toppingPremium, boolean toppingExtraPremium, boolean toppingChess, boolean toppingExtraChess ){
+    public double sandwichCalculation(String size,boolean toppingMeat, boolean toppingExtraMeat,
+                                      boolean toppingChess, boolean toppingExtraChess ){
 
         double total = 0;
 
         if ( size.equalsIgnoreCase("small")){
             total += pricing.getSandwichPrice4Inch();
-            if (toppingPremium){
+            if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice4Inch();}
-            if(toppingExtraPremium){
+            if(toppingExtraMeat){
                 total+=pricing.getExtraMeatPrice4Inch();}
             if (toppingChess){
                 total += pricing.getCheesePrice4Inch();}
@@ -20,9 +21,9 @@ public class Calculation {
 
         } else if (size.equalsIgnoreCase("medium")) {
             total += pricing.getSandwichPrice8Inch();
-            if (toppingPremium){
+            if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice8Inch();}
-            if(toppingExtraPremium){
+            if(toppingExtraMeat){
                 total+=pricing.getExtraMeatPrice8Inch();}
             if (toppingChess){
                 total += pricing.getCheesePrice8Inch();}
@@ -31,9 +32,9 @@ public class Calculation {
 
         } else if (size.equalsIgnoreCase("large")) {
             total += pricing.getSandwichPrice12Inch();
-            if (toppingPremium){
+            if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice12Inch();}
-            if(toppingExtraPremium){
+            if(toppingExtraMeat){
                 total+=pricing.getExtraMeatPrice12Inch();}
             if (toppingChess){
                 total += pricing.getCheesePrice12Inch();}

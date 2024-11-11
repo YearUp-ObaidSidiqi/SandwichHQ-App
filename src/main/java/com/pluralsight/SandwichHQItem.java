@@ -16,4 +16,6 @@ public abstract class SandwichHQItem implements IReceiptDescription {
     public double getPrice() {
         return price;
     }
+
+
 }

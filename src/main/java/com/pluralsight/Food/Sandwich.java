@@ -36,7 +36,7 @@ public class Sandwich extends SandwichHQItem {
 
 
     @Override
-    public String receipt() {
+    public  String receipt() {
         return String.format(
                 "Order: %s | Price: $%.2f | Size: %s | Bread: %s | Toasted: %s | Meat: %s | Cheese: %s | Toppings: %s | Sauces: %s",
                 this.getDescription(),

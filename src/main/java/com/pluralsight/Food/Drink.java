@@ -13,7 +13,6 @@ public class Drink extends SandwichHQItem {
         this.flavor = flavor;
     }
 
-
     @Override
     public String receipt() {
         return String.format(
@@ -24,5 +23,4 @@ public class Drink extends SandwichHQItem {
                 this.flavor
         );
     }
-
 }

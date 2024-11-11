@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import com.pluralsight.Food.Sandwich;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -100,6 +102,8 @@ public class UserInterface {
         System.out.println("0. No meat");
         ArrayList<Integer> sandwichMeatOption = Utilities.PromptForArrayInt("Please select from [1], [2], [3], [4], [5], [6] or 0 if no meat: ");
 
+       // if (sandwichMeatOption)
+
         // Extra Meat option
         System.out.println("\nThinking of adding extra meat? (yes/no) [default: no]");
         System.out.println("Extra meat (adds approximately 150-250 calories depending on the type of meat you choose)");
@@ -140,8 +144,19 @@ public class UserInterface {
 
         System.out.println("\nThank you! Your sandwich order is all set. Get ready to enjoy a meal that’s as customized as you are.");
 
+       /* // creating boolean, for calculation price,
+        if ()
 
+            boolean toppingMeat
+        boolean toppingExtraMeat;
+        boolean toppingChess;
+        boolean toppingExtraChess;*/
 
+        /*
+        double x = Calculation.sandwichCalculation(sandwichSize, )
+        Order order = new Order();
+        order.orders.add(new Sandwich("Sandwich", ))
+*/
     }
 
     private static void addDrink() {
@@ -168,6 +183,8 @@ public class UserInterface {
         System.out.println("┌────────────────┐");
         System.out.println("│ Order Checkout │");
         System.out.println("└────────────────┘");
+
+
 
     }
 

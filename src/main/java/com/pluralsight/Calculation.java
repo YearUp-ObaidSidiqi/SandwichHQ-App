@@ -1,14 +1,14 @@
 package com.pluralsight;
 
 public class Calculation {
-    Pricing pricing;
+    static Pricing pricing;
 
-    public double sandwichCalculation(String size,boolean toppingMeat, boolean toppingExtraMeat,
+    public static double sandwichCalculation(int size,boolean toppingMeat, boolean toppingExtraMeat,
                                       boolean toppingChess, boolean toppingExtraChess ){
 
         double total = 0;
 
-        if ( size.equalsIgnoreCase("small")){
+        if ( size==1){
             total += pricing.getSandwichPrice4Inch();
             if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice4Inch();}
@@ -19,7 +19,7 @@ public class Calculation {
             if (toppingExtraChess){
                 total += pricing.getExtraCheesePrice4Inch();}
 
-        } else if (size.equalsIgnoreCase("medium")) {
+        } else if (size == 2) {
             total += pricing.getSandwichPrice8Inch();
             if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice8Inch();}
@@ -30,7 +30,7 @@ public class Calculation {
             if (toppingExtraChess){
                 total += pricing.getExtraCheesePrice8Inch();}
 
-        } else if (size.equalsIgnoreCase("large")) {
+        } else if (size==3) {
             total += pricing.getSandwichPrice12Inch();
             if (toppingMeat){
                 total += pricing.getSandwichToppingsPrice12Inch();}
@@ -44,17 +44,17 @@ public class Calculation {
         return total;
     }
 
-    public double drinkCalculation(String size){
+    public static double drinkCalculation(int size){
         return
-        switch (size.toUpperCase()){
-            case "SMALL" ->  pricing.getSmallDrinkPrice();
-            case "MEDIUM" -> pricing.getMediumDrinkPrice();
-            case "LARGE" -> pricing.getLargeDrinkPrice();
-            default -> throw new IllegalStateException("Unexpected value: " + size.toUpperCase());
+        switch (size){
+            case 1 ->  pricing.getSmallDrinkPrice();
+            case 2 -> pricing.getMediumDrinkPrice();
+            case 3 -> pricing.getLargeDrinkPrice();
+            default -> throw new IllegalStateException("Unexpected value: ");
         };
     }
 
-    public double chipCalculation(String size){
+    public static double chipCalculation(){
         return pricing.getChipsPrice();
     }
 }

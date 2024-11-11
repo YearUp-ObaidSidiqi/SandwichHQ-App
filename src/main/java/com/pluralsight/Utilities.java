@@ -4,20 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Utilities {
 
-
-
     static Scanner scanner = new Scanner(System.in);
 
-    public static double PromptForDouble(String prompt){
-        System.out.print(prompt);
-        String userInputs = scanner.nextLine();
-        double userinput = Double.parseDouble(userInputs);
-        return userinput;
-    }
     public static String PromptForString(String prompt){
         System.out.print(prompt);
         String input = scanner.nextLine().toUpperCase();
@@ -31,42 +25,11 @@ public class Utilities {
         return chr;
     }
 
-   /* public static ArrayList<Transaction> getDepositsFromFullLedger(ArrayList<Transaction> fullLedger){
-        //loop through all transaction (fullLedger) create a new arraylist with only deposits and return that..
-        System.out.println("List of All Deposits  Transactions: ");
-        System.out.println("-----------------------------------------------------------------------");
-
-        var depositTransaction = new ArrayList<Transaction>();
-        for ( Transaction t : fullLedger){
-            if (t.getAmount()>0){
-                depositTransaction.add(new Transaction(t.getDate(),t.getTime(),t.getDescription(),t.getVendor(),t.getAmount()));
-            }
-        }
-        return depositTransaction ;
-    }
-    public static ArrayList<Transaction> getPaymentsFromFullLedger(ArrayList<Transaction> fullLedger){
-        //loop through all transaction (fullLedger) create a new arraylist with only Payment and return that..
-        System.out.println("List of All Payment  Transactions: ");
-        System.out.println("-----------------------------------------------------------------------");
-
-        var paymentTransaction = new ArrayList<Transaction>();
-        for ( Transaction t : fullLedger){
-            if (t.getAmount()<0){
-                paymentTransaction.add(new Transaction(t.getDate(),t.getTime(),t.getDescription(),t.getVendor(),t.getAmount()));
-            }
-        }
-        return paymentTransaction ;
-    }*/
-
-
-
     public static LocalDate PromptForLocalDate(String prompt){
         System.out.print(prompt);
         String input = scanner.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(input,formatter);
-
-
         return localDate;
     }
     public static LocalTime PromptForLocalTime(String prompt){
@@ -74,47 +37,45 @@ public class Utilities {
         String input = scanner.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss, a");
         LocalTime localTime = LocalTime.parse(input,formatter);
-
-
         return localTime;
     }
 
 
-    public static String PromptForString(){
-        return scanner.nextLine();
-    }
-
-    public static short PromptForShort(String prompt){
-        System.out.print(prompt);
-        short userinput = scanner.nextShort();
-        scanner.nextLine();
-        return  userinput;
-    }
-
-    public static byte PromptForByte(String prompt){
-        System.out.print(prompt);
-        byte userinput =scanner.nextByte();
-        return userinput;
-    }
 
     public static int PromptForInt(String prompt){
         System.out.print(prompt);
         String userInputs = scanner.nextLine();
         int userinput =Integer.parseInt(userInputs);
-        scanner.nextLine();
         return userinput;
+    }
+    public static ArrayList<Integer> PromptForArrayInt(String prompt){
+        System.out.print(prompt);
+        String userInputs = scanner.nextLine();
+        String [] p = (userInputs.split(Pattern.quote(",")));
+        ArrayList<Integer> l = new ArrayList<>();
+        for ( int q = 0; q < p.length; q++){
+            l.add(Integer.parseInt(p[q]));
+        }
+        return l;
     }
 
     public static boolean PromptForYesNo(String prompt){
-        System.out.print(prompt + " ( Y for Yes, N for No ) ?");
+        System.out.print(prompt + " (Enter Y, Yes, or 1 for [Yes]; N, No, or 2 for [No]): ");
+        String userinput = scanner.nextLine();
+        return
+                (userinput.equalsIgnoreCase("Y")||
+               userinput.equalsIgnoreCase("YES")||
+                userinput.equalsIgnoreCase("1"));
+    }
+    public static boolean PromptForYesNo(){
+        System.out.print(" (Enter Y, Yes, or 1 for [Yes]; N, No, or 2 for [No]): ");
         String userinput = scanner.nextLine();
 
         return
                 (
-                        userinput.equalsIgnoreCase("Y")
-                                ||
-                                userinput.equalsIgnoreCase("YES".
-                                )
+                        userinput.equalsIgnoreCase("Y")||
+                                userinput.equalsIgnoreCase("YES")||
+                                userinput.equalsIgnoreCase("1")
                 );
 
     }

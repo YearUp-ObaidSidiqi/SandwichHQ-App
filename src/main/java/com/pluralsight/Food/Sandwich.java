@@ -10,13 +10,17 @@ public class Sandwich extends SandwichHQItem {
     String breadType;
     boolean isToasted;
     ArrayList<String> meat;
+    boolean extraMeat;
     ArrayList<String> cheese;
-    ArrayList<String> otherTopping;
+    boolean extraChess;
+    ArrayList<String> regularTopping;
     ArrayList<String> sauce;
 
-    public Sandwich(String description, double price, String size, String breadType,
-                    boolean isToasted, ArrayList<String> meat, ArrayList<String> cheese,
-                    ArrayList<String> otherTopping, ArrayList<String> sauce)
+
+
+    public Sandwich(String description, double price, String size, String breadType, ArrayList<String> meat,
+                    boolean extraMeat, ArrayList<String> cheese, boolean extraChess, ArrayList<String> otherTopping,
+                    ArrayList<String> sauce, boolean isToasted )
     {
         super(description, price);
         this.size = size;
@@ -24,8 +28,10 @@ public class Sandwich extends SandwichHQItem {
         this.isToasted = isToasted;
         this.meat = meat;
         this.cheese = cheese;
-        this.otherTopping = otherTopping;
+        this.regularTopping = otherTopping;
         this.sauce = sauce;
+        this.extraMeat= extraMeat;
+        this.extraChess = extraChess;
     }
 
 
@@ -40,7 +46,7 @@ public class Sandwich extends SandwichHQItem {
                 this.isToasted ? "Yes" : "No",
                 String.join(", ", this.meat),
                 String.join(", ", this.cheese),
-                String.join(", ", this.otherTopping),
+                String.join(", ", this.regularTopping),
                 String.join(", ", this.sauce)
         );
     }

@@ -1,5 +1,4 @@
 package com.pluralsight;
-
 import com.pluralsight.Food.Sandwich;
 
 import java.util.ArrayList;
@@ -102,12 +101,15 @@ public class UserInterface {
         System.out.println("0. No meat");
         ArrayList<Integer> sandwichMeatOption = Utilities.PromptForArrayInt("Please select from [1], [2], [3], [4], [5], [6] or 0 if no meat: ");
 
-       // if (sandwichMeatOption)
+        boolean extraMeat = false;
+       if (!(sandwichMeatOption.get(0)==0)){
 
-        // Extra Meat option
-        System.out.println("\nThinking of adding extra meat? (yes/no) [default: no]");
-        System.out.println("Extra meat (adds approximately 150-250 calories depending on the type of meat you choose)");
-        boolean extraMeat = Utilities.PromptForYesNo("Enter 'yes' for extra meat or 'no' for none: ");
+            // Extra Meat option
+            System.out.println("\nThinking of adding extra meat? (yes/no) [default: no]");
+            System.out.println("Extra meat (adds approximately 150-250 calories depending on the type of meat you choose)");
+            extraMeat = Utilities.PromptForYesNo("Enter 'yes' for extra meat or 'no' for none: ");
+       }
+
 
         // Cheese options
         System.out.println("\nCheese time! Because every sandwich deserves a little cheese (you can select multiple by typing numbers separated by commas):");
@@ -118,10 +120,14 @@ public class UserInterface {
         System.out.println("0. No cheese");
         ArrayList<Integer> sandwichCheeseOption = Utilities.PromptForArrayInt("Select your cheese [1,2,3...], or [0] for no cheese: ");
 
-        // Extra Cheese option
-        System.out.println("\nLet’s make it extra cheesy. What do you say? (yes/no) [default: no]");
-        System.out.println("Extra cheese (adds approximately 100-130 calories depending on the cheese you choose)");
-        boolean extraCheese = Utilities.PromptForYesNo("Enter 'yes' for extra cheese or 'no' for none: ");
+        boolean extraCheese = false;
+        if (!(sandwichCheeseOption.get(0)==0)) {
+
+            // Extra Cheese option
+            System.out.println("\nLet’s make it extra cheesy. What do you say? (yes/no) [default: no]");
+            System.out.println("Extra cheese (adds approximately 100-130 calories depending on the cheese you choose)");
+            extraCheese = Utilities.PromptForYesNo("Enter 'yes' for extra cheese or 'no' for none: ");
+        }
 
         // Sauces
         System.out.println("\nWhat’s a sandwich without sauce? Let’s get saucy: (you can select multiple by typing numbers separated by commas):");
@@ -144,19 +150,60 @@ public class UserInterface {
 
         System.out.println("\nThank you! Your sandwich order is all set. Get ready to enjoy a meal that’s as customized as you are.");
 
-       /* // creating boolean, for calculation price,
-        if ()
+        // creating boolean, for calculating price,
+        boolean toppingMeat = false;
+        boolean toppingExtraMeat = false;
+        boolean toppingChess = false;
+        boolean toppingExtraChess = false;
+        if (!(sandwichMeatOption.get(0) ==0)) {toppingMeat = true;}
+        if (extraMeat) {toppingExtraMeat = true;}
+        if (!(sandwichCheeseOption.get(0) ==0)) {toppingChess = true;}
+        if (extraCheese) {toppingExtraChess = true;}
 
-            boolean toppingMeat
-        boolean toppingExtraMeat;
-        boolean toppingChess;
-        boolean toppingExtraChess;*/
+        double sandwichPrice = Calculation.sandwichCalculation(sandwichSize, toppingMeat, toppingExtraMeat, toppingChess, toppingExtraChess);
 
-        /*
-        double x = Calculation.sandwichCalculation(sandwichSize, )
+        System.out.println(sandwichPrice);
+
+        // creating Strings for sandwich size
+        String orderSandwichSize = null;
+        if (sandwichSize == 1) {
+            orderSandwichSize = "small";
+        } else if (sandwichSize == 2) {
+            orderSandwichSize = "medium";
+        } else if (sandwichSize == 3) {
+            orderSandwichSize = "large";
+        }
+
+
+        // creating Strings for sandwich bread type
+        String orderSandwichBread = null;
+        if (sandwichBreadType == 1) {
+            orderSandwichBread = "White";
+        } else if (sandwichBreadType == 2) {
+            orderSandwichBread = "Wheat";
+        } else if (sandwichBreadType == 3) {
+            orderSandwichBread = "Rye";
+        }else if (sandwichBreadType == 4) {
+            orderSandwichBread = "Wrap";
+        }
+
+        // creating Array for sandwich meatOption
+
+        // creating Array for sandwich cheeseOption
+
+        // creating Array for sandwich regularToppingOption
+
+        // creating Array for sandwich saucesOptionOption
+
+
+
+
+
+
         Order order = new Order();
-        order.orders.add(new Sandwich("Sandwich", ))
-*/
+        order.orders.add(new Sandwich("Sandwich",sandwichPrice, orderSandwichSize, orderSandwichBread,
+                sandwichMeatOption, extraMeat, sandwichCheeseOption, extraCheese,sandwichRegularToppingOption,sandwichSaucesOption,toastOption))
+
     }
 
     private static void addDrink() {

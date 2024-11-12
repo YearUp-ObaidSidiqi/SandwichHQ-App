@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class Sandwich extends SandwichHQItem {
 
-    String size;
+    String  size;
     String breadType;
     boolean isToasted;
     ArrayList<String> meat;
     boolean extraMeat;
     ArrayList<String> cheese;
-    boolean extraChess;
+    boolean extraCheese;
     ArrayList<String> regularTopping;
     ArrayList<String> sauce;
 
@@ -23,7 +23,7 @@ public class Sandwich extends SandwichHQItem {
                     ArrayList<String> sauce, boolean isToasted )
     {
         super(description, price);
-        this.size = size;
+        this.size=size;
         this.breadType = breadType;
         this.isToasted = isToasted;
         this.meat = meat;
@@ -31,7 +31,7 @@ public class Sandwich extends SandwichHQItem {
         this.regularTopping = otherTopping;
         this.sauce = sauce;
         this.extraMeat= extraMeat;
-        this.extraChess = extraChess;
+        this.extraCheese = extraChess;
     }
 
 

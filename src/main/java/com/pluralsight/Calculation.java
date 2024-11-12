@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class Calculation {
-    static Pricing pricing;
+    static Pricing pricing = new Pricing();
 
     public static double sandwichCalculation(int size,boolean toppingMeat, boolean toppingExtraMeat,
                                       boolean toppingChess, boolean toppingExtraChess ){

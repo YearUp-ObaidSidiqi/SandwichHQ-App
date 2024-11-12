@@ -32,3 +32,10 @@ public class Pricing {
         }
 
 }
+
+ public static int PromptForInt(String prompt){
+        System.out.print(prompt);
+        String userInputs = scanner.nextLine();
+        int userinput =Integer.parseInt(userInputs);
+        return userinput;
+    }

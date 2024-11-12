@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.FileManager;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -15,17 +15,13 @@ public class SandwichFileManager {
             System.out.println(localDateTime);
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
-            String filename = localDateTime.format(formatter);
-            System.out.println(filename);
+            String filenameFormat = localDateTime.format(formatter);
 
-            String filename2=filename+".txt";
+            String filename="./order/"+filenameFormat+".txt";
 
             //Creating a file writer and assigning the file writer to the buffered writer.
-            FileWriter fw = new FileWriter(filename2);
-            BufferedWriter bw = new BufferedWriter(fw);
-
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
             bw.write(order);
-
             bw.close(); // Close the BufferedWriter
 
         } catch (IOException e){

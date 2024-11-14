@@ -1,5 +1,7 @@
 package com.pluralsight;
 import com.pluralsight.Calculation.Calculation;
+import com.pluralsight.Food.Chips;
+import com.pluralsight.Food.Drink;
 import com.pluralsight.Food.Sandwich;
 import com.pluralsight.Utilities.Utilities;
 
@@ -7,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import static com.pluralsight.FileManager.SandwichFileManager.creatingTheOrderReceipt;
 
 public class UserInterface {
     public static void main(String[] args) {
@@ -61,6 +65,8 @@ public class UserInterface {
         }
         scanner.close();
     }
+
+    static Order order = new Order();
 
     private static void addSandwich() {
 
@@ -166,18 +172,16 @@ public class UserInterface {
         System.out.println("\nThank you! Your sandwich order is all set. Get ready to enjoy a meal that’s as customized as you are.");
 
         // creating boolean, for calculating price,
+        boolean toppingMeat = false;
+        boolean toppingExtraMeat = false;
+        boolean toppingChess = false;
+        boolean toppingExtraChess = false;
+        if (!(sandwichMeatOptionValue.get(0) ==0)) {toppingMeat = true;}
+        if (extraMeat) {toppingExtraMeat = true;}
+        if (!(sandwichCheeseOptionValue.get(0) ==0)) {toppingChess = true;}
+        if (extraCheese) {toppingExtraChess = true;}
 
-       /* double sandwichPrice = Calculation.sandwichCalculation(sandwichSize, toppingMeat, toppingExtraMeat, toppingChess, toppingExtraChess);*/
-
-        // creating Strings for sandwich size
-        String orderSandwichSize = null;
-        if (sandwichSize == 1) {
-            orderSandwichSize = "small";
-        } else if (sandwichSize == 2) {
-            orderSandwichSize = "medium";
-        } else if (sandwichSize == 3) {
-            orderSandwichSize = "large";
-        }
+        double sandwichPrice = Calculation.sandwichCalculation(sandwichSize, toppingMeat, toppingExtraMeat, toppingChess, toppingExtraChess);
 
         // creating Strings for sandwich bread type
         String orderSandwichBread = null;
@@ -189,6 +193,15 @@ public class UserInterface {
             orderSandwichBread = "Rye";
         }else if (sandwichBreadType == 4) {
             orderSandwichBread = "Wrap";
+        }
+        // creating Strings for sandwich size
+        String orderSandwichSize = null;
+        if (sandwichSize == 1) {
+            orderSandwichSize = "small";
+        } else if (sandwichSize == 2) {
+            orderSandwichSize = "medium";
+        } else if (sandwichSize == 3) {
+            orderSandwichSize = "large";
         }
 
         /// Convert ArrayList<Integers> to ArrayList<Strings>
@@ -241,8 +254,8 @@ public class UserInterface {
         ArrayList<String> selectedToppings = new ArrayList<>();
         for (Integer toppingNumber : selectedToppingNumbers) {
             // Adjust for zero-based indexing by subtracting 1
-            if (toppingNumber >= 0 && toppingNumber <= toppingOptions.size()) {
-                selectedToppings.add(toppingOptions.get(toppingNumber - 1));
+            if (toppingNumber >= 0 && toppingNumber < toppingOptions.size()) {
+                selectedToppings.add(toppingOptions.get(toppingNumber));
             }
         }
 
@@ -263,25 +276,17 @@ public class UserInterface {
             }
         }
 
-        double sandwichPrice = 0;
-        Order order = new Order();
-        order.orders.add(new Sandwich("Sandwich",sandwichPrice, orderSandwichSize, orderSandwichBread,
+
+        order.orders.add(new Sandwich(sandwichPrice, orderSandwichSize, orderSandwichBread,
                 selectedMeats, extraMeat, selectedCheese, extraCheese,selectedToppings,selectedSauces,toastOption));
 
-        for (SandwichHQItem o : order.orders){
-            System.out.println( o.receipt());
-
-        }
 
     }
-
-    /*
-    private void static addMeatToSandwich(ArrayList<Integer> meatValues, Sandwich sandwich){
-        //do work to loop through integers, translate into string, and add to sandwich...
-    }
-    */
 
     private static void addDrink() {
+
+        String water = "Sparkling water";
+        String flavor = "No Flavor";
 
         // Drink Option
         String drinkOptionSt = """
@@ -291,8 +296,19 @@ public class UserInterface {
                 3. Large         - 0 calories
                 0. No drink (Are you sure you don't want some sparkle?)
                 """;
-        int drinkOption = Utilities.PromptForInt(drinkOptionSt + "\nWhich one will it be? [1], [2], [3], or [0] to skip");
+        int drinkOption = Utilities.PromptForInt(drinkOptionSt + "\nWhich one will it be? [1], [2], [3], or [0] to skip: ");
+        double drinkPrice = Calculation.drinkCalculation(drinkOption);
 
+        // creating Strings for sandwich size
+        String orderDrinkSize = null;
+        if (drinkOption == 1) {
+            orderDrinkSize = "small";
+        } else if (drinkOption == 2) {
+            orderDrinkSize = "medium";
+        } else if (drinkOption == 3) {
+            orderDrinkSize = "large";
+        }
+        order.orders.add(new Drink("Drink", drinkPrice, orderDrinkSize, flavor));
     }
 
     private static void addChips() {
@@ -301,7 +317,39 @@ public class UserInterface {
                 1. Yes, I want chips - 150 calories
                 0. No chips
                 """;
+
         boolean chipsOption = Utilities.PromptForYesNo(chipsOptionSt + "\nType '1' for chips, '0' if you're skipping the crunch");
+        String chipsFlavors = """ 
+                Crunch Time! Choose Your Flavorful Sidekick!
+                All chips are equally delicious, same price, same calories!
+                1. Doritos - Spicy, crunchy, and dangerously tasty
+                2. Lay's - Classic crunch for your munch
+                3. Cheetos - A cheesy delight, beware of fingers!
+                4. Pringles - Bet you can’t eat just one stack!
+                
+                Make your choice wisely... and crunch away!
+                """;
+        int chipsFlavorValue = Utilities.PromptForInt(chipsFlavors);
+
+        // creating Array for sandwich saucesOptionOption
+        List<String> chipsOptions = Arrays.asList(
+                "surprised ",// 0
+                "Doritos",    // 1
+                "Lay's",      // 2
+                "Cheetos",    // 3
+                "Pringles"
+        );
+        String selectedChips = "";
+
+        switch (chipsFlavorValue){
+            case 1 -> selectedChips="Doritos";
+            case 2 -> selectedChips="Lay's";
+            case 3 -> selectedChips="Cheetos";
+            case 4 -> selectedChips="Pringles";
+        }
+
+        double chipPrice = Calculation.chipCalculation();
+        order.orders.add(new Chips("Chips", chipPrice, selectedChips));
 
     }
 
@@ -310,7 +358,7 @@ public class UserInterface {
         System.out.println("│ Order Checkout │");
         System.out.println("└────────────────┘");
 
-
+        creatingTheOrderReceipt(order.orders);
 
     }
 

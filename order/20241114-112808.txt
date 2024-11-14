@@ -1,0 +1,5 @@
+Order: Drink | Price: $2.00 | Size: Small | Flavor: No Flavor
+Order: Chips | Price: $1.50 | Flavor: Flavor selected
+
+-------------------------------------
+Total Price: $3.50

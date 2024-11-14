@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class Calculation {
 
-    /*public static double sandwichCalculation(int size, ArrayList<String> meats, boolean toppingExtraMeat,
-                                             Ars, boolean toppingExtraChess ){
-
+    public static double sandwichCalculation(int sandwichSize, boolean toppingMeat, boolean toppingExtraMeat,
+                                             boolean toppingChess, boolean toppingExtraChess ){
         double total = 0;
 
-        if ( size==1){
+        if ( sandwichSize==1){
             total += Pricing.getSandwichPrice4Inch();
             if (toppingMeat){
                 total += Pricing.getSandwichToppingsPrice4Inch();}
@@ -20,7 +19,7 @@ public class Calculation {
             if (toppingExtraChess){
                 total += Pricing.getExtraCheesePrice4Inch();}
 
-        } else if (size == 2) {
+        } else if (sandwichSize == 2) {
             total += Pricing.getSandwichPrice8Inch();
             if (toppingMeat){
                 total += Pricing.getSandwichToppingsPrice8Inch();}
@@ -31,7 +30,7 @@ public class Calculation {
             if (toppingExtraChess){
                 total += Pricing.getExtraCheesePrice8Inch();}
 
-        } else if (size==3) {
+        } else if (sandwichSize==3) {
             total += Pricing.getSandwichPrice12Inch();
             if (toppingMeat){
                 total += Pricing.getSandwichToppingsPrice12Inch();}
@@ -43,7 +42,7 @@ public class Calculation {
                 total += Pricing.getExtraCheesePrice12Inch();}
         }
         return total;
-    }*/
+    }
 
     public static double drinkCalculation(int size){
         return
@@ -53,6 +52,7 @@ public class Calculation {
             case 3 -> Pricing.getLargeDrinkPrice();
             default -> throw new IllegalStateException("Unexpected value: ");
         };
+
     }
 
     public static double chipCalculation(){

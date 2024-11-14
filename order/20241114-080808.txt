@@ -1,0 +1,1 @@
+Order: Sandwich | Price: $8.05 | Size: small | Bread: White | Toasted: Yes | Meat: Steak (250 calories) | Cheese: American (100 calories) | Toppings: No toppings | Sauces: Mayo (90 calories)

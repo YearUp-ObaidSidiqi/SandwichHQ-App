@@ -1,0 +1,3 @@
+Order: Sandwich | Price: $12.10 | Size: Medium | Bread: White | Toasted: Yes | Meat: Steak, Salami | Cheese: American, Swiss | Toppings: Lettuce, Peppers | Sauces: Mustard
+Order: Drink | Price: $2.00 | Size: Small | Flavor: No Flavor
+Order: Chips | Price: $1.50 | Flavor: Flavor selected

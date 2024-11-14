@@ -1,0 +1,21 @@
+           ** SandwichHQ Receipt **
+  ----------------------------------------
+  Date: 2024-11-14 11:30:55
+
+Item: Sandwich   Size: Small | Bread: White  | Toasted: Yes
+Meat: Steak   
+Cheese: American
+Toppings: Lettuce             
+Sauces: Mayo           
+Price: $8.05
+  ----------------------------------------
+Item: Drink      Size: Small | Flavor: No Flavor 
+Price: $2.00
+  ----------------------------------------
+Item: Chips      | Flavor: Flavor selected
+Price: $1.50
+  ----------------------------------------
+
+  Total: $11.55
+  Thank you for dining with us!
+  ----------------------------------------

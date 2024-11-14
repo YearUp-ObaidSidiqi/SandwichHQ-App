@@ -1,0 +1,2 @@
+Order: Drink | Price: $2.00 | Size: small | Flavor: No Flavor
+Order: Drink | Price: $2.00 | Size: small | Flavor: No Flavor

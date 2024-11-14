@@ -1,11 +1,7 @@
 package com.pluralsight.Food;
-
-
 import com.pluralsight.SandwichHQItem;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class Sandwich extends SandwichHQItem {
 
@@ -19,30 +15,10 @@ public class Sandwich extends SandwichHQItem {
     ArrayList<String> regularTopping;
     ArrayList<String> sauce;
 
-    public void addMeat(String meat) {
-        this.meat.add(meat);
-    }
-
-    public void addMeat(ArrayList<String> meat) {
-        //loop through and add to this.meat (or find more efficient way to inject multiple items)
-    }
-
-
-    /*public Sandwich (String description, String size,ArrayList<String> meat, boolean toppingExtraMeat,
-                     ArrayList<String> cheese, boolean toppingExtraChess){
-        super("Sandwich");
-        this.size=size;
-        this.meat=meat;
-        this.extraMeat=toppingExtraMeat;
-        this.cheese=cheese;
-        this.extraCheese=toppingExtraChess;
-    }*/
-
-
-    public Sandwich(String description, double price, String size, String breadType, ArrayList<String> meat,
+    public Sandwich(double price, String size, String breadType, ArrayList<String> meat,
                     boolean extraMeat, ArrayList<String> cheese, boolean extraChess, ArrayList<String> otherTopping,
                     ArrayList<String> sauce, boolean isToasted) {
-        super(description, price);
+        super("Sandwich", price);
         this.size = size;
         this.breadType = breadType;
         this.isToasted = isToasted;
@@ -58,26 +34,17 @@ public class Sandwich extends SandwichHQItem {
     @Override
     public String receipt() {
         return String.format(
-                "Order: %s | Price: $%.2f | Size: %s | Bread: %s | Toasted: %s | Meat: %s | Cheese: %s | Toppings: %s | Sauces: %s",
+                "Item: %-10s Size: %-4s | Bread: %-6s | Toasted: %-3s\nMeat: %-8s\nCheese: %-7s\nToppings: %-20s\nSauces: %-15s\nPrice: $%.2f",
                 this.getDescription(),
-                this.getPrice(),
                 this.size,
                 this.breadType,
                 this.isToasted ? "Yes" : "No",
                 String.join(", ", this.meat),
                 String.join(", ", this.cheese),
                 String.join(", ", this.regularTopping),
-                String.join(", ", this.sauce)
+                String.join(", ", this.sauce),
+                this.getPrice()
         );
     }
-
-    /*
-    public double getPrice(){
-        //do calc here...
-        Pricing.sandwichPrice4Inch
-    }
-    */
-
-
 }
 

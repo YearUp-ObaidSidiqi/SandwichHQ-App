@@ -11,36 +11,6 @@ public class Utilities {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public static String PromptForString(String prompt){
-        System.out.print(prompt);
-        String input = scanner.nextLine().toUpperCase();
-        return input;
-    }
-
-    public static char PromptForChar(String prompt){
-        System.out.print(prompt);
-        String input = scanner.nextLine().trim().toUpperCase();
-        char chr = input.charAt(0);
-        return chr;
-    }
-
-    public static LocalDate PromptForLocalDate(String prompt){
-        System.out.print(prompt);
-        String input = scanner.nextLine();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate = LocalDate.parse(input,formatter);
-        return localDate;
-    }
-    public static LocalTime PromptForLocalTime(String prompt){
-        System.out.print(prompt);
-        String input = scanner.nextLine();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss, a");
-        LocalTime localTime = LocalTime.parse(input,formatter);
-        return localTime;
-    }
-
-
-
     public static int PromptForInt(String prompt){
         System.out.print(prompt);
         String userInputs = scanner.nextLine();

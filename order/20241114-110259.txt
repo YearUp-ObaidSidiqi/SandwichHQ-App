@@ -1,0 +1,1 @@
+Order: Drink | Price: $2.50 | Size: medium | Flavor: No FlavorOrder: Chips | Price: $1.50 | Flavor: DoritosOrder: Drink | Price: $2.00 | Size: small | Flavor: No Flavor

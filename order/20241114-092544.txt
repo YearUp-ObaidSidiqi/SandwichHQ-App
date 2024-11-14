@@ -1,0 +1,1 @@
+Order: Sandwich | Price: $5.50 | Size: small | Bread: White | Toasted: Yes | Meat: No meat | Cheese: No cheese | Toppings: No toppings, Lettuce (5 calories) | Sauces: Mustard (10 calories)

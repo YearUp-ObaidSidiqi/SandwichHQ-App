@@ -1,0 +1,3 @@
+Order: Chips | Price: $1.50 | Flavor: Cheetos
+Order: Chips | Price: $1.50 | Flavor: Doritos
+Order: Drink | Price: $2.00 | Size: small | Flavor: No Flavor

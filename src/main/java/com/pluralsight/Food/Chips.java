@@ -7,18 +7,17 @@ public class Chips extends SandwichHQItem {
     String flavor;
 
     public Chips(String description, double price, String flavor) {
-        super(description, price);
+        super("Chips", price);
         this.flavor = flavor;
     }
-
 
     @Override
     public String receipt() {
         return String.format(
-                "Order: %s | Price: $%.2f | Flavor: %s",
+                "Item: %-10s | Flavor: %-10s\nPrice: $%.2f",
                 this.getDescription(),
-                this.getPrice(),
-                this.flavor
+                this.flavor,
+                this.getPrice()
         );
     }
 }

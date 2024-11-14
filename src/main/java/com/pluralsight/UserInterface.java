@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.pluralsight.FileManager.SandwichFileManager.creatingTheOrderReceipt;
+import static com.pluralsight.FileManager.ReceiptFileManager.creatingTheOrderReceipt;
 
 public class UserInterface {
     public static void main(String[] args) {
@@ -277,7 +277,7 @@ public class UserInterface {
         }
 
 
-        order.orders.add(new Sandwich(sandwichPrice, orderSandwichSize, orderSandwichBread,
+        order.Items.add(new Sandwich(sandwichPrice, orderSandwichSize, orderSandwichBread,
                 selectedMeats, extraMeat, selectedCheese, extraCheese,selectedToppings,selectedSauces,toastOption));
 
 
@@ -308,7 +308,7 @@ public class UserInterface {
         } else if (drinkOption == 3) {
             orderDrinkSize = "large";
         }
-        order.orders.add(new Drink("Drink", drinkPrice, orderDrinkSize, flavor));
+        order.Items.add(new Drink("Drink", drinkPrice, orderDrinkSize, flavor));
     }
 
     private static void addChips() {
@@ -349,7 +349,7 @@ public class UserInterface {
         }
 
         double chipPrice = OrderPriceCalculator.chipCalculation();
-        order.orders.add(new Chips("Chips", chipPrice, selectedChips));
+        order.Items.add(new Chips("Chips", chipPrice, selectedChips));
 
     }
 
@@ -358,8 +358,14 @@ public class UserInterface {
         System.out.println("│ Order Checkout │");
         System.out.println("└────────────────┘");
 
-        creatingTheOrderReceipt(order.orders);
+       /* String receipt = "           ** SandwichHQ Receipt **\n" +
+                "------------------------------------------\n" +
+                "  Date: " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "\n\n";
+*/
+        creatingTheOrderReceipt(order.Items);
 
     }
+
+
 
 }

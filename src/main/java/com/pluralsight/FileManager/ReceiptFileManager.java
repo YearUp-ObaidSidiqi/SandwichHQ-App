@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class SandwichFileManager {
+public class ReceiptFileManager {
 
     public static void creatingTheOrderReceipt(ArrayList<SandwichHQItem> orders) {
         try {

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.pluralsight.FileManager.SandwichFileManager.creatingTheOrderReceipt;
+import static com.pluralsight.FileManager.ReceiptFileManager.creatingTheOrderReceipt;
 
 public class UI {
     private static final Scanner scanner = new Scanner(System.in);
@@ -96,7 +96,7 @@ public class UI {
 
         Sandwich sandwich = createSandwich(sandwichSize, sandwichBreadType, selectedToppingNumbers, sandwichMeatOptionValue,
                 extraMeat, sandwichCheeseOptionValue, extraCheese, sandwichSaucesOptionValue, toastOption);
-        order.orders.add(sandwich);
+        order.Items.add(sandwich);
     }
 
     private static Sandwich createSandwich(int sandwichSize, int sandwichBreadType, ArrayList<Integer> selectedToppingNumbers,
@@ -124,19 +124,19 @@ public class UI {
         String orderDrinkSize = getSizeType(drinkOption);
 
         if (drinkOption != 0) {
-            order.orders.add(new Drink("Drink", drinkPrice, orderDrinkSize, "No Flavor"));
+            order.Items.add(new Drink("Drink", drinkPrice, orderDrinkSize, "No Flavor"));
         }
     }
 
     private static void addChips() {
         if (Utilities.PromptForYesNo(getChipsOption())) {
             String chipsFlavor = Utilities.PromptForInt(getChipsFlavorsOptions()) != 0 ? "Flavor selected" : "No Flavor";
-            order.orders.add(new Chips("Chips", PricingManager.getChipsPrice() , chipsFlavor));
+            order.Items.add(new Chips("Chips", PricingManager.getChipsPrice() , chipsFlavor));
         }
     }
 
     private static void checkout() {
-        creatingTheOrderReceipt(order.orders);
+        creatingTheOrderReceipt(order.Items);
         System.out.println("Order receipt has been created. Thank you!");
     }
 

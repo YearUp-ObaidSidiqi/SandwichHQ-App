@@ -1,8 +1,10 @@
 package com.pluralsight.Calculation;
 
 
-public class Pricing {
+public class PricingManager {
 
+
+    //MenuPricing
 
     // Sandwich Prices (per size)
     private static final double sandwichPrice4Inch = 5.50;

@@ -1,5 +1,5 @@
 package com.pluralsight;
-import com.pluralsight.Calculation.Calculation;
+import com.pluralsight.Calculation.OrderPriceCalculator;
 import com.pluralsight.Food.Chips;
 import com.pluralsight.Food.Drink;
 import com.pluralsight.Food.Sandwich;
@@ -181,7 +181,7 @@ public class UserInterface {
         if (!(sandwichCheeseOptionValue.get(0) ==0)) {toppingChess = true;}
         if (extraCheese) {toppingExtraChess = true;}
 
-        double sandwichPrice = Calculation.sandwichCalculation(sandwichSize, toppingMeat, toppingExtraMeat, toppingChess, toppingExtraChess);
+        double sandwichPrice = OrderPriceCalculator.calculateSandwichTotalPrice(sandwichSize, toppingMeat, toppingExtraMeat, toppingChess, toppingExtraChess);
 
         // creating Strings for sandwich bread type
         String orderSandwichBread = null;
@@ -297,7 +297,7 @@ public class UserInterface {
                 0. No drink (Are you sure you don't want some sparkle?)
                 """;
         int drinkOption = Utilities.PromptForInt(drinkOptionSt + "\nWhich one will it be? [1], [2], [3], or [0] to skip: ");
-        double drinkPrice = Calculation.drinkCalculation(drinkOption);
+        double drinkPrice = OrderPriceCalculator.drinkCalculation(drinkOption);
 
         // creating Strings for sandwich size
         String orderDrinkSize = null;
@@ -348,7 +348,7 @@ public class UserInterface {
             case 4 -> selectedChips="Pringles";
         }
 
-        double chipPrice = Calculation.chipCalculation();
+        double chipPrice = OrderPriceCalculator.chipCalculation();
         order.orders.add(new Chips("Chips", chipPrice, selectedChips));
 
     }

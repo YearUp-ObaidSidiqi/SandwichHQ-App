@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import com.pluralsight.Calculation.Calculation;
-import com.pluralsight.Calculation.Pricing;
+import com.pluralsight.Calculation.OrderPriceCalculator;
+import com.pluralsight.Calculation.PricingManager;
 import com.pluralsight.Food.Chips;
 import com.pluralsight.Food.Drink;
 import com.pluralsight.Food.Sandwich;
@@ -103,7 +103,7 @@ public class UI {
                                            ArrayList<Integer> sandwichMeatOptionValue, boolean extraMeat,
                                            ArrayList<Integer> sandwichCheeseOptionValue, boolean extraCheese,
                                            ArrayList<Integer> sandwichSaucesOptionValue, boolean toastOption) {
-        double sandwichPrice = Calculation.sandwichCalculation(sandwichSize, hasToppings(sandwichMeatOptionValue),
+        double sandwichPrice = OrderPriceCalculator.calculateSandwichTotalPrice(sandwichSize, hasToppings(sandwichMeatOptionValue),
                 extraMeat, hasToppings(sandwichCheeseOptionValue), extraCheese);
 
         String orderSandwichBread = getBreadType(sandwichBreadType);
@@ -120,7 +120,7 @@ public class UI {
 
     private static void addDrink() {
         int drinkOption = Utilities.PromptForInt(getDrinkOptions());
-        double drinkPrice = Calculation.drinkCalculation(drinkOption);
+        double drinkPrice = OrderPriceCalculator.drinkCalculation(drinkOption);
         String orderDrinkSize = getSizeType(drinkOption);
 
         if (drinkOption != 0) {
@@ -131,7 +131,7 @@ public class UI {
     private static void addChips() {
         if (Utilities.PromptForYesNo(getChipsOption())) {
             String chipsFlavor = Utilities.PromptForInt(getChipsFlavorsOptions()) != 0 ? "Flavor selected" : "No Flavor";
-            order.orders.add(new Chips("Chips", Pricing.getChipsPrice() , chipsFlavor));
+            order.orders.add(new Chips("Chips", PricingManager.getChipsPrice() , chipsFlavor));
         }
     }
 

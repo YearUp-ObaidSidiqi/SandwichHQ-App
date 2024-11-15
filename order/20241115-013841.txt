@@ -1,0 +1,15 @@
+           ** SandwichHQ Receipt **
+------------------------------------------
+  Date: 2024-11-15 01:38:41
+
+Item: Sandwich   Size: large | Bread: White  | Toasted: Yes
+Meat: No meat 
+Cheese: No cheese
+Toppings: Onions (15 calories), Jalapeños (5 calories)
+Sauces: Mustard (10 calories)
+Price: $13.75
+------------------------------------------
+
+  Total: $13.75
+  Thank you for dining with us!
+------------------------------------------

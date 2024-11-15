@@ -1,13 +1,10 @@
-package com.pluralsight.Utilities;
+package com.pluralsight.utils;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Utilities {
+public class HelperFunction {
 
     static Scanner scanner = new Scanner(System.in);
 
@@ -29,12 +26,12 @@ public class Utilities {
     }
 
     public static boolean PromptForYesNo(String prompt){
-        System.out.print(prompt + " (Enter Y, Yes, or 1 for [Yes]; N, No, or 2 for [No]): ");
+        System.out.print(prompt);
         String userinput = scanner.nextLine();
         return
                 (userinput.equalsIgnoreCase("Y")||
-               userinput.equalsIgnoreCase("YES")||
-                userinput.equalsIgnoreCase("1"));
+                        userinput.equalsIgnoreCase("YES")||
+                        userinput.equalsIgnoreCase("1"));
     }
     public static boolean PromptForYesNo(){
         System.out.print(" (Enter Y, Yes, or 1 for [Yes]; N, No, or 2 for [No]): ");
@@ -78,6 +75,20 @@ public class Utilities {
             System.out.println("***************************************");
 
         System.out.println("\n");
+    }
+
+    public static void showLoadingMessage() {
+        System.out.print("\n\nPlease wait to confirm your sandwich order, loading");
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                System.out.print(".");
+                Thread.sleep(1000); // Wait 1 second
+            }
+            System.out.println("\nOrder confirmed! Thank you for your patience.\n");
+        } catch (InterruptedException e) {
+            System.out.println("\nAn error occurred while processing your order. Please try again.");
+        }
     }
 
 }

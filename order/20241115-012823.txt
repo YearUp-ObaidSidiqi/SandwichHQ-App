@@ -1,0 +1,21 @@
+           ** SandwichHQ Receipt **
+------------------------------------------
+  Date: 2024-11-15 01:28:23
+
+Item: Sandwich   Size: large | Bread: White  | Toasted: Yes
+Meat: No meat 
+Cheese: Provolone (120 calories)
+Toppings: Tomatoes (20 calories), Jalapeños (5 calories), Cucumbers (10 calories)
+Sauces: Mustard (10 calories), Thousand Islands (130 calories)
+Price: $13.75
+------------------------------------------
+Item: Drink      Size: medium | Flavor: No Flavor 
+Price: $2.50
+------------------------------------------
+Item: Chips      | Flavor: Pringles  
+Price: $1.50
+------------------------------------------
+
+  Total: $17.75
+  Thank you for dining with us!
+------------------------------------------

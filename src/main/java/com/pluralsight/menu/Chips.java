@@ -1,16 +1,16 @@
-package com.pluralsight.Food;
+package com.pluralsight.menu;
 
-import com.pluralsight.SandwichHQItem;
+import com.pluralsight.pricing.PricingManager;
+import com.pluralsight.core.SandwichHQItem;
 
 public class Chips extends SandwichHQItem {
 
     String flavor;
 
-    public Chips(String description, double price, String flavor) {
-        super("Chips", price);
+    public Chips(String flavor) {
+        super("Chips", PricingManager.getChipsPrice());
         this.flavor = flavor;
     }
-
     @Override
     public String receipt() {
         return String.format(

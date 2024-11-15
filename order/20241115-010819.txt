@@ -1,0 +1,15 @@
+           ** SandwichHQ Receipt **
+------------------------------------------
+  Date: 2024-11-15 01:08:19
+
+Item: Sandwich   Size: small | Bread: White  | Toasted: Yes
+Meat: Steak (250 calories)
+Cheese: American (100 calories)
+Toppings: Lettuce (5 calories)
+Sauces: Mayo (90 calories)
+Price: $7.75
+------------------------------------------
+
+  Total: $7.75
+  Thank you for dining with us!
+------------------------------------------

@@ -1,6 +1,6 @@
-package com.pluralsight.FileManager;
+package com.pluralsight.file_management;
 
-import com.pluralsight.SandwichHQItem;
+import com.pluralsight.core.SandwichHQItem;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class ReceiptFileManager {
+public class ReceiptFileHandler {
 
     public static void creatingTheOrderReceipt(ArrayList<SandwichHQItem> orders) {
         try {

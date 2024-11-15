@@ -21,7 +21,7 @@ Coming ...
 
 ### Key Classes
 
-1. **Pricing.java**:
+1. **PricingManager.java**:
    - Contains all pricing details for sandwiches, drinks, and chips.
    - Methods to get prices based on sandwich size, toppings, drink size, and more.
 
@@ -29,7 +29,7 @@ Coming ...
    - Represents an item in the order (e.g., sandwich, drink, chips).
    - Includes a `receipt()` method to format the order details into a string for the receipt.
 
-3. **SandwichFileManager.java**:
+3. **HQ_UserInterface.java**:
    - Manages file saving and receipt generation.
    - The `createAndShowOrderReceipt()` method writes the receipt to a text file and displays it in the UI using a `JTextArea`.
 
@@ -69,20 +69,37 @@ Coming ...
 - When the checkout is complete, a file named `yyyyMMdd-HHmmss.txt` will be generated in the `./order/` directory.
 - The receipt displayed in the UI will contain the order details, itemized prices, and a total amount.
 
-## Example Receipt (in UI and File):
+## Folder Structure
+       src
+         └── main
+            └── java
+               └── comp-pluralsight
+                  ├── core
+                  │   ├── IReceiptDescription.java
+                  │   ├── Order.java
+                  │   ├── SandwichHQItem.java
+                  │   └── UserInterface.java
+                  ├── file_management
+                  │   └── ReceiptFileHandler.java
+                  ├── menu
+                  │   ├── Chips.java
+                  │   ├── Drink.java
+                  │   └── Sandwich.java
+                  ├── pricing
+                  │   └── PricingManager.java
+                  └── utils
+                  │    └── HelperFunction.java
+                  └── Program.java
 
+## UI
+![Here is the screenshots](./resources/PI.png)
 
-       ** SandwichHQ Receipt **
-        Date: 2024-11-14 12:34:56
+![Here is the screenshots](./resources/PII.png)
 
-        Sandwich: 8" - Roast Beef, Swiss, Lettuce, Mayo
-        $7.00
-        Drink: Medium Soda
-        $2.50
-        Chips: Classic
-        $1.50
+![Here is the screenshots](./resources/PIII.png)
 
-        Total: $11.00 Thank you for dining with us!
+## Application Flow
+![Here is the screenshots](./resources/Application Flow.png)
 
 
 ## Contributions
@@ -93,6 +110,9 @@ Feel free to contribute to this project. You can:
 - Report issues or suggest new features via GitHub Issues.
 
 ## License
+This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for more details.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 🚀 About Me
+I'm a developer...
+Find me in  [Linkedln](https://www.linkedin.com/in/obaid-sidiqi/)

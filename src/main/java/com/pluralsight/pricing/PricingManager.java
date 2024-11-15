@@ -1,4 +1,4 @@
-package com.pluralsight.Calculation;
+package com.pluralsight.pricing;
 
 
 public class PricingManager {
@@ -12,9 +12,9 @@ public class PricingManager {
     private static final double sandwichPrice12Inch = 8.50;
 
     // Topping Prices for Meats (per size)
-    private static final double sandwichToppingsPrice4Inch = 1.00;
-    private static final double sandwichToppingsPrice8Inch = 2.00;
-    private static final double sandwichToppingsPrice12Inch = 3.00;
+    private static final double sandwichMeatPrice4Inch = 1.00;
+    private static final double sandwichMeatPrice8Inch = 2.00;
+    private static final double sandwichMeatPrice12Inch = 3.00;
 
     // Extra Meat Prices (per size)
     private static final double extraMeatPrice4Inch = 0.50;
@@ -62,16 +62,16 @@ public class PricingManager {
         return sandwichPrice12Inch;
     }
 
-    public static double getSandwichToppingsPrice4Inch() {
-        return sandwichToppingsPrice4Inch;
+    public static double getSandwichMeatPrice4Inch() {
+        return sandwichMeatPrice4Inch;
     }
 
-    public static double getSandwichToppingsPrice8Inch() {
-        return sandwichToppingsPrice8Inch;
+    public static double getSandwichMeatPrice8Inch() {
+        return sandwichMeatPrice8Inch;
     }
 
-    public static double getSandwichToppingsPrice12Inch() {
-        return sandwichToppingsPrice12Inch;
+    public static double getSandwichMeatPrice12Inch() {
+        return sandwichMeatPrice12Inch;
     }
 
     public static double getExtraMeatPrice4Inch() {

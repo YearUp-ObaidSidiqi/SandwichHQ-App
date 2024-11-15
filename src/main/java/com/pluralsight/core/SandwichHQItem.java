@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.core;
 
 public abstract class SandwichHQItem implements IReceiptDescription {
     String description;

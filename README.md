@@ -17,7 +17,7 @@
 - **User Interface (UI)**: The user interface is designed using Java Swing to allow easy ordering and viewing of receipts.
 
 ## Project Structure
-Coming ...
+
 
 ### Key Classes
 
